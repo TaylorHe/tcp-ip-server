@@ -1,0 +1,12 @@
+cs392/src/my > gcc -c *.c -Wall -Werror --pedantic -I../../include 
+cs392/src/my > ar -rc libmy.a *.o
+cs392/src/my > ranlib libmy.a
+cs392/src/my > mv libmy.a ../../lib
+
+cs392/test > 
+
+gcc testmy_hw2.c -o testmy -Wall -Werror -pedantic -I../include -L../lib -lmy -llist
+
+
+
+gcc -c *.c -Wall -Werror --pedantic -I../../include && ar -rc libmy.a *.o && ranlib libmy.a && mv libmy.a ../../lib

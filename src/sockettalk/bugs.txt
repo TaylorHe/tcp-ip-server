@@ -1,0 +1,24 @@
+Taylor He
+
+KNOWN BUGS:
+	1. When resizing, messages disappear if the window height < lines displayed.
+
+	2. Messages disappear when scrolled off the screen. 
+
+	3. Resizing works, but sometimes you have to send a message to fix the screen. 
+
+	4. The cursor always ends at the end of the last printed line from the server. 
+
+	5. Scrolling on the input line. It types fine, and I've tested the actual char* being sent. Right and left arrows still work as intended, you just can't see them.
+
+
+ATTEMPTED FIXES FOR THESE BUGS:
+	1 and 2. I read that disappearing when scrolling and resizing is intentional, as that is how curses handles scrolling. Still, kind of annoying, so...
+	I tried created a linked list of all sent messages, and then restoring as many as I can on the screen size so that none are lost. This took many hours, until I realized I failed miserably, and broke everything. 
+	git stash is my best friend.
+
+	3. I have tried refreshing the window after resizing but it doesn’t want to work. From my experience, resizing the window right and left work fine, but up and down is strange.
+
+	4. The cursor fixes itself when you start typing again, and puts the cursor back on the input line. I have tried refresh()-ing, wrefresh()-ing after the output but it just doesn’t work for some reason.
+
+	5. I tried fixing this  with the linked list implementation previously mentioned above, but it was getting close to the deadline so I didn't have the time, also due to other finals.
