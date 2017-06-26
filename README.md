@@ -16,9 +16,13 @@ Read bugs.txt to see the problems and my (miserable) attempts at fixing them and
 This compiles on Mac and Linux afaik. I have no idea if it runs on Cygwin.
 
 HOW TO RUN:
+
 cd src/sockettalk
+
 make re
+
 ./server [portno]
+
 ./client [host] [portno]
 
 Type on the client to send messages through the server to other clients. Messages received from the server are displayed in COLOR_YELLOW, and your sent messages are displayed in COLOR_WHITE. Errors from the server are displayed as COLOR_RED.
